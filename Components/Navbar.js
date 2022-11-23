@@ -14,21 +14,21 @@ export default function Navbar() {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
-          <Link href={"/home"} className='menu-bars'>
+          <Link href={"/registro"} className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
-              <Link href={"/home"} className='menu-bars'>
+              <Link href={"/registro"} className='menu-bars'>
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link href={"/home"} to={item.path}>
+                  <Link href={"/registro"} to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>
