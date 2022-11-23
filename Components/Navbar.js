@@ -14,14 +14,14 @@ export default function Navbar() {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
-          <Link href={"/registro"} className='menu-bars'>
+          <Link href={""} className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
-              <Link href={"/registro"} className='menu-bars'>
+              <Link href={"/pacientes"} className='menu-bars'>
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>

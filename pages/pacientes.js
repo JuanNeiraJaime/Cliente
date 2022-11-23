@@ -66,17 +66,6 @@ return (
 					/>
 				</div>
 
-				<div>
-					<label htmlFor="telefono">Telefono</label>
-					<input
-						type="text"
-						name="telefono"
-						placeholder="Telefono"
-						id="telefono"
-						value={inputTelefono}
-						onChange={handleInputTelefono}
-					/>
-				</div>
 
 				<div>
 					<label htmlFor="sexo">Sexo</label>

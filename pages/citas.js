@@ -78,18 +78,6 @@ return (
 					/>
 				</div>
 
-				<div>
-					<label htmlFor="sexo">Sexo</label>
-					<input
-						type="text"
-						name="sexo"
-						placeholder="Sexo"
-						id="sexo"
-						value={inputSexo}
-						onChange={handleInputSexo}
-					/>
-				</div>
-
 				<button type="submit">Enviar</button>
 			</form>
 		</>

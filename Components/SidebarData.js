@@ -6,19 +6,19 @@ import * as IoIcons from 'react-icons/io';
 export const SidebarData = [
   {
     title: 'Pacientes',
-    path: '/',
+    path: '/pacientes',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
   {
     title: 'Registro',
-    path: '/reports',
+    path: '/registro',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
     title: 'Citas',
-    path: '/products',
+    path: '/citas',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
   },
