@@ -12,7 +12,7 @@ export const SidebarData = [
   },
   {
     title: 'Registro',
-    path: '/reports',
+    path: '/Pacientes/registro',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
