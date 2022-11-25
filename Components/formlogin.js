@@ -30,7 +30,7 @@ export default function Formlogin() {
             }) .then((res) => {
                if (res.status == 200) {
                 console.log("Exito", "Se ha iniciado Sesion Correctamente", "Succes");
-                window.location.replace("http//localhost:3000/home")
+                window.location.replace("/home")
                } else if (422) {
                 console.log();("Error", "Algo ha salido mal", "Error");
                }

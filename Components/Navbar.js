@@ -14,7 +14,8 @@ export default function Navbar() {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
-          <Link href={""} className='menu-bars'>
+          <Link href={""} className='menu-bars'/>
+          <Link href={"/home"} className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
@@ -22,13 +23,15 @@ export default function Navbar() {
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
               <Link href={"/pacientes"} className='menu-bars'>
+              <Link href={"/Pacientes/registro"} className='menu-bars'>
                 <AiIcons.AiOutlineClose />
+              </Link>
               </Link>
             </li>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link href={"/registro"} to={item.path}>
+                  <Link href={"/home"} to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>
