@@ -1,65 +1,83 @@
-/* import {useState, state} from "react";
-import Input  from "../Input";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Table, Button, Container, Modal, ModalBody, ModalHeader, FormGroup, ModalFooter} from 'reactstrap';
-import { data } from "autoprefixer";
-
-const datos = [
-    {id: 1, Nombres:"Prueba", Apellidos: "Prueba", Telefono: "8672256801", Edad: 19, Sexo: "Masculino", Alergia: "ninguna"},
-]; 
-
-
-export default function ListadoPaciente({children}) {
-
-	 state={
-        data: datos
-    } 
-
-	return<div>
-    <form className="bg-white max-w-lg mx-auto p-8 md:p-20 my-10 rounded-lg shadow-2xl" >
-    <section>
-        <h3 className="font-bold text-2xl">Listado de pacientes</h3>
-    </section>
-        <Container>
-
-        <br/>
-        <Button color="primary">Insertar nuevo Paciente:</Button>
+import React, {useState} from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Table,
+  Button,
+  Container,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  FormGroup,
+  ModalFooter,
+} from "reactstrap";
 
 
-            <Table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Telefono</th>
-                        <th>Edad</th>
-                        <th>Sexo</th>
-                        <th>Alergia</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.data.map((elemento)=>{
-                        <tr>
-                            <td>{elemento.id}</td>
-                            <td>{elemento.Nombres}</td>
-                            <td>{elemento.Apellidos}</td>
-                            <td>{elemento.Telefono}</td>
-                            <td>{elemento.Edad}</td>
-                            <td>{elemento.Sexo}</td>
-                            <td>{elemento.Alergia}</td>
-                            <td><Button color="primary">Editar</Button>
-                            <Button color="danger">Eliminar</Button></td>
-                        </tr>
-                    })}
-                </tbody>
-            </Table>
+function ListadoPaciente({ pacientes, setListUpdated }) {
 
-        </Container> 
-           
-    </form>
+    //const [editar, setEditar] = useState([])
 
-   
-</div>
-} */
+
+    const Registrar = (e) => {
+        window.location.replace("/Pacientes/registro")
+    }
+
+    const handleDelete = (id) => {
+        const requestInit = {
+            method: "DELETE"
+        }
+        console.log(id);
+
+        fetch("http://[::1]:3001/pacientes/" + id, requestInit)
+            .then(res => res.text())
+            .then(res => console.log(res))
+
+            setListUpdated(true)
+
+    }
+
+    const handleUpdate = (id) => {
+       // e.preventDefault()
+        //window.location.replace("/Pacientes/registro" + "/" + id)
+    }
+
+    
+  return (
+    <Container>
+      <br />
+
+      <Button color="success" onClick={Registrar}>Insertar nuevo Paciente:</Button>
+
+      <Table>
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Alergia</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pacientes.map((paciente) => (
+            <tr key={paciente.id_pac}>
+              <td>{paciente.Nombres}</td>
+              <td>{paciente.Apellidos}</td>
+              <td>{paciente.Telefono}</td>
+              <td>{paciente.Edad}</td>
+              <td>{paciente.Sexo}</td>
+              <td>{paciente.Alergia}</td>  
+                <td>
+                  <Button onClick={() => handleUpdate(paciente.id_pac)} color="primary">Editar</Button>
+                  <Button onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
+                </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
+  );
+}
+
+export default ListadoPaciente;

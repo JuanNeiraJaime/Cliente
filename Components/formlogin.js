@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "./Input";
+import swal from "sweetalert";
 
 export default function Formlogin() {
     const [correo, setCorreo] = useState ("")
@@ -17,7 +18,13 @@ export default function Formlogin() {
 
         if(correo === "" || contraseña === "")
         {
-            console.log("No puede dejar vacio los campos, favor de llenar los campos correctamente con sus datos.");
+            //console.log("No puede dejar vacio los campos, favor de llenar los campos correctamente con sus datos.");
+           swal({
+                title: "Contraseña Incorrecta",
+                text: "No puede dejar vacio los campos, favor de llenar los campos correctamente con sus datos.",
+                icon: "error",
+                button: "Aceptar"
+           });
         }
         else{
             console.log("Entro al fetch");
@@ -28,11 +35,26 @@ export default function Formlogin() {
                     password: contraseña}),
                 headers: {'Content-Type': 'application/json'}
             }) .then((res) => {
-               if (res.status == 200) {
-                console.log("Exito", "Se ha iniciado Sesion Correctamente", "Succes");
+               if (res.status == 200) 
+               {
+                //console.log("Exito", "Se ha iniciado Sesion Correctamente", "Succes");
+                /* swal({
+                    title: "Exito",
+                    text: "Se ha iniciado Sesion Correctamente",
+                    icon: "Succes",
+                    button: "Aceptar"
+               }); */
                 window.location.replace("/home")
-               } else if (422) {
-                console.log();("Error", "Algo ha salido mal", "Error");
+               } 
+               else if (422) 
+               {
+                //console.log();("Error", "Algo ha salido mal", "Error");
+                swal({
+                    title: "Contraseña Incorrecta",
+                    text: "Algo ha salido mal, verifique que este escrito bien sus datos y vuelva a intentar gracias.",
+                    icon: "error",
+                    button: "Aceptar"
+               });
                }
             })
             .then((res) => console.log(res))
