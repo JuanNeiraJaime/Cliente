@@ -10,15 +10,22 @@ import {
   FormGroup,
   ModalFooter,
 } from "reactstrap";
+import { useRouter } from "next/router";
 
 
 function ListadoPaciente({ pacientes, setListUpdated }) {
 
+
+  const router = useRouter()
     //const [editar, setEditar] = useState([])
 
 
     const Registrar = (e) => {
-        window.location.replace("/Pacientes/registro")
+        router.push("/Pacientes/registro")
+    }
+
+    function editar (p) {
+      router.push({pathname: "/Pacientes/registro", query: p})
     }
 
     const handleDelete = (id) => {
@@ -69,7 +76,7 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
               <td>{paciente.Sexo}</td>
               <td>{paciente.Alergia}</td>  
                 <td>
-                  <Button onClick={() => handleUpdate(paciente.id_pac)} color="primary">Editar</Button>
+                  <Button onClick={() => editar(paciente)} color="primary">Editar</Button>
                   <Button onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
                 </td>
             </tr>
