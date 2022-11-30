@@ -47,7 +47,7 @@ export default function Registro({ id = "", nombre = "", apellido = "", telefono
 
 	const listadopacientes = (e) => {
 		e.preventDefault()
-		window.location.replace("/Pacientes/Listado2")
+		router.push("/Pacientes/Listado")
 	}
 
 	const RegistrarPaciente = (e) => {
@@ -94,7 +94,7 @@ export default function Registro({ id = "", nombre = "", apellido = "", telefono
 						.then((res) => {
 							if (res.status == 200) {
 								console.log("Exito", "Se ha registrado el usuario correctamente", "Succes");
-								window.location.replace("/Pacientes/Listado2")
+								router.push("/Pacientes/Listado")
 							} else if (422) {
 								console.log(); ("Error", "Algo ha salido mal", "Error");
 								swal({
@@ -132,7 +132,7 @@ export default function Registro({ id = "", nombre = "", apellido = "", telefono
 						.then((res) => {
 							if (res.status == 204) {
 								console.log("Exito", "Se actualizo el usuario correctamente", "Succes");
-								window.location.replace("/Pacientes/Listado2")
+								router.push("/Pacientes/Listado")
 							} else if (422) {
 								console.log(); ("Error", "Algo ha salido mal", "Error");
 								swal({

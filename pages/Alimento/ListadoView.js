@@ -1,21 +1,21 @@
 import React, {Fragment, useState, useEffect} from "react";
 import Navbar from '../../Components/NavbarNutri'
-import ListadoPaciente from "../../Components/Paciente/ListadoPaciente";
+import ListadoAlimento from "../../Components/Alimento/Listado";
 
-export default function Listado2() {
+export default function ListadoView() {
 
-    const [pacientes, setPacientes] = useState([])
+    const [alimento, setAlimento] = useState([])
 
     const [listUpdated, setListUpdated] = useState(false);
 
     useEffect(() => {
-        const getPacientes = () => {
-            fetch("http://[::1]:3001/pacientes")
+        const getAlimento = () => {
+            fetch("http://[::1]:3001/alimentos")
             .then(res => res.json())
-            .then(res => setPacientes(res))
+            .then(res => setAlimento(res))
         }
 
-        getPacientes()
+        getAlimento()
         setListUpdated(false)
     }, [listUpdated]);
 
@@ -28,9 +28,9 @@ export default function Listado2() {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h2 style={{textAlign: 'center'}}>Listado de pacientes</h2>
+                        <h2 style={{textAlign: 'center'}}>Listado de Alimentos</h2>
                         
-                        <ListadoPaciente pacientes={pacientes} setListUpdated={setListUpdated}/>
+                        <ListadoAlimento Alimentos={alimento} setListUpdated={setListUpdated}/>
                     </div>
                 </div>
             </div>
