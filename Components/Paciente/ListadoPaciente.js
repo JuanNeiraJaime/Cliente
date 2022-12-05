@@ -28,6 +28,10 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
       router.push({pathname: "/Pacientes/registro", query: p})
     }
 
+    function handleCita (id) {
+      router.push({pathname: "/Citas/registro", query: id})
+    }
+
     const handleDelete = (id) => {
         const requestInit = {
             method: "DELETE"
@@ -78,6 +82,7 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
                 <td>
                   <Button onClick={() => editar(paciente)} color="primary">Editar</Button>
                   <Button onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
+                  <Button onClick={() => handleCita(paciente)} color="danger">Agendar Cita</Button>
                 </td>
             </tr>
           ))}
