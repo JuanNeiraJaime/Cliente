@@ -19,6 +19,7 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
 
 	const [Id, setId] = useState(id)
     const [Nombre, setNombre] = useState(nombre)
+	const [Ape, setApe] = useState(apellido)
 	const [Hora, setHora] = useState(new Date())
 	const [Fecha, setFecha] = useState(new Date())
 	
@@ -40,9 +41,10 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
 
 	useEffect(() => {
 
-		//console.log(router.query);
+		console.log(router.query);
 		setId(router.query.id_pac)
         setNombre(router.query.Nombres)
+		setApe(router.query.Apellidos)
 	}, [])
 
 	//console.log(Nombres);
@@ -53,7 +55,7 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
 		router.push("/Pacientes/Listado")
 	}
 
-	const RegistrarPaciente = (e) => {
+	const RegistrarCita = (e) => {
 		e.preventDefault()
 
 		console.log(Hora, Fecha);
@@ -61,7 +63,7 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
 		if (Hora === "" || Fecha === "") {
 			//console.log("No puede dejar vacio los campos, favor de llenar los campos correctamente con sus datos.");
 			swal({
-				title: "Error al Registrar Paciente",
+				title: "Error al Registrar la Cita",
 				text: "No puede dejar vacio los campos, favor de llenar los campos correctamente con sus datos.",
 				icon: "error",
 				button: "Aceptar"
@@ -72,6 +74,7 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
                     var intfecha = Fecha.toLocaleDateString();
                     var inthora = Hora.toLocaleTimeString();
                     var intID = parseInt(Id)
+					var nombres = Nombre + " " + Ape
                    
                    
 
@@ -80,7 +83,8 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
 						body: JSON.stringify({
 							Hora: inthora,
 							Fecha: intfecha,
-							id_pac: intID
+							id_pac: intID,
+							NamePaciente: nombres
 						}),
 						headers: { 'Content-Type': 'application/json' }
 					})
@@ -124,7 +128,7 @@ export default function RegistroCita({ id = "", nombre = "", apellido = "", tele
 				{/* <Input typeinput="date" value={Fecha} name="Apellidos" onChange={onChangeFecha} /> */}
 				
 			</section>
-			<button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" onClick={RegistrarPaciente}>Registrar Cita</button>
+			<button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" onClick={RegistrarCita}>Registrar Cita</button>
 			<button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-x1 transition duration-200" onClick={listadopacientes}>Cancelar</button>
 		</form>
 
