@@ -28,6 +28,10 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
       router.push({pathname: "/Pacientes/Progreso/listadoprog", query:{"id": paciente } })
     }
 
+    const Dietas =(paciente) =>{
+      router.push({pathname: "/Dietas/Dietaview", query:{"id": paciente } })
+    }
+
     function editar (p) {
       router.push({pathname: "/Pacientes/registro", query: p})
     }
@@ -87,6 +91,9 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                 Alergia
               </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Acciones
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -101,8 +108,12 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{paciente.Alergia}</td>  
                 <td>
                   <Button size="sm"  onClick={() => editar(paciente)} color="primary">Editar</Button>
-                  <Button size="sm" onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
                   <Button size="sm" onClick={() => Prog(paciente.id_pac)} color="primary">Progresos</Button>
+                  <Button size="sm" onClick={() => Dietas(paciente.id_pac)} color="primary">Dietas</Button>
+                  
+                  <br></br>
+                  <br></br>
+                  <Button size="sm" onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
                   {/* <Button onClick={() => editar(paciente)} color="primary">Editar</Button>
                   <Button onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button> */}
                   <Button size="sm" onClick={() => handleCita(paciente)} color="danger">Agendar Cita</Button>
