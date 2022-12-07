@@ -1,6 +1,7 @@
 import React, {Fragment, useState, useEffect} from "react";
 import Navbar from '../../Components/NavbarNutri'
 import ListadoAlimento from "../../Components/Alimento/Listado";
+import { URL } from "../../constantes";
 
 export default function ListadoView() {
 
@@ -10,7 +11,7 @@ export default function ListadoView() {
 
     useEffect(() => {
         const getAlimento = () => {
-            fetch("http://[::1]:3001/alimentos")
+            fetch(URL + "/alimentos")
             .then(res => res.json())
             .then(res => setAlimento(res))
         }

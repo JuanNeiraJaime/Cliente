@@ -1,6 +1,8 @@
 import React, {Fragment, useState, useEffect} from "react";
-import Navbar from '../../Components/NavbarNutri'
+import Navbar from '../../Components/Navbar'
 import ListadoPaciente from "../../Components/Paciente/ListadoPaciente";
+import Layout from "../../Components/layoutinicio";
+import { URL } from "../../constantes";
 
 export default function Listado() {
 
@@ -10,7 +12,7 @@ export default function Listado() {
 
     useEffect(() => {
         const getPacientes = () => {
-            fetch("http://[::1]:3001/pacientes")
+            fetch(URL + "/pacientes")
             .then(res => res.json())
             .then(res => setPacientes(res))
         }
@@ -20,8 +22,7 @@ export default function Listado() {
     }, [listUpdated]);
 
     return (
-        <Fragment>
-            <Navbar brand='Nutridiet App'/>
+        <Layout>
             <div className="container">
                 <div className="row">
                     <div className="">
@@ -34,6 +35,6 @@ export default function Listado() {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </Layout>
     )
   }

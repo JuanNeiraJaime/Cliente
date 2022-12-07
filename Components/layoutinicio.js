@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "./Navbar";
 
 export default function Layoutinicio({children}) {
-    return (<React.Fragment>
+    return (<>
         <Navbar>  </Navbar>
         {children}
-    </React.Fragment>)
+    </>)
 }

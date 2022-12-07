@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import Link from 'next/link';
 import { SidebarData } from './SidebarData';
-import { IconContext } from 'react-icons';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -12,35 +9,48 @@ export default function Navbar() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link href={""} className='menu-bars'/>
-          <Link href={"/home"} className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+      <nav className="bg-gray-800">
+  <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div className="relative flex h-16 items-center justify-between">
+      <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button type="button" className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span className="sr-only">Open main menu</span>
+
+          <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+ 
+          <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        
+        <div className="hidden sm:ml-6 sm:block">
+          <div className="flex space-x-4">
+            <Link href="/Pacientes/Listado" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Pacientes</Link>
+
+            <Link href="/Pacientes/registro" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dieta</Link>
+
+            <Link href="" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Citas</Link>
+          </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link href={"/pacientes"} className='menu-bars'>
-              <Link href={"/Pacientes/registro"} className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link>
-              </Link>
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link href={"/home"} to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
+      </div>
+    </div>
+  </div>
+
+  <div className="sm:hidden" id="mobile-menu">
+    <div className="space-y-1 px-2 pt-2 pb-3">
+      <Link href="/Pacientes/Listado" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Pacientes</Link>
+
+
+      <Link href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dieta</Link>
+
+      <Link href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Citas</Link>
+    </div>
+  </div>
+</nav>
     </>
   );
 }
