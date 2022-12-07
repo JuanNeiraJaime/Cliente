@@ -159,24 +159,24 @@ export default function Registro({ id = "", nombre = "", apellido = "", telefono
 	return <div>
 		<form className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl" >
 			<section>
-				<h3 className="font-bold text-2xl">Registro de pacientes</h3>
+				<h3 className="font-bold text-2xl text-gray-600">Registro de pacientes</h3>
 				<p className="text-gray-600 pt-2">Ingrese los datos correctamente</p>
 			</section>
 			<section className="mt-6">
-				<div><label htmlFor="ID">ID:</label></div>
-				<Input typeinput="text" value={Id} name="Nombres" onChange={onChangeId} />
-				<div><label htmlFor="Nombres">Nombres:</label></div>
-				<Input typeinput="text" value={Nombres} name="Nombres" onChange={onChangeNom} />
-				<div><label htmlFor="Nombres">Apellidos:</label></div>
-				<Input typeinput="text" value={Apellidos} name="Apellidos" onChange={onChangeApellidos} />
-				<div><label htmlFor="Nombres">Telefono:</label></div>
-				<Input typeinput="text" value={Telefono} name="telefono" onChange={onChangeTelefono} />
-				<div><label htmlFor="Nombres">Edad:</label></div>
-				<Input typeinput="text" value={Edad} name="edad" onChange={onChangeEdad} />
-				<div><label htmlFor="Nombres">Sexo:</label></div>
-				<Input typeinput="text" value={Sexo} name="sexo" onChange={onChangeSexo} />
-				<div><label htmlFor="Nombres">Alergia:</label></div>
-				<Input typeinput="text" value={Alergia} name="alergia" onChange={onChangeAlergia} />
+				{/* <div><label htmlFor="ID">ID:</label></div> */}
+				<input typeinput="text"  value={Id} name="Nombres" onChange={onChangeId} hidden/>
+				<div><label className="text-gray-600" htmlFor="Nombres">Nombres:</label></div>
+				<Input typeinput="text"  value={Nombres} name="Nombres" onChange={onChangeNom} />
+				<div><label className="text-gray-600" htmlFor="Nombres">Apellidos:</label></div>
+				<Input typeinput="text"  value={Apellidos} name="Apellidos" onChange={onChangeApellidos} />
+				<div><label className="text-gray-600" htmlFor="Nombres">Telefono:</label></div>
+				<Input typeinput="text"  value={Telefono} name="telefono" onChange={onChangeTelefono} />
+				<div><label className="text-gray-600" htmlFor="Nombres">Edad:</label></div>
+				<Input typeinput="text"  value={Edad} name="edad" onChange={onChangeEdad} />
+				<div><label className="text-gray-600" htmlFor="Nombres">Sexo:</label></div>
+				<Input typeinput="text"  value={Sexo} name="sexo" onChange={onChangeSexo} />
+				<div><label className="text-gray-600" htmlFor="Nombres">Alergia:</label></div>
+				<Input typeinput="text"  value={Alergia} name="alergia" onChange={onChangeAlergia} />
 			</section>
 			<button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" onClick={RegistrarPaciente}>Registrar Paciente</button>
 			<button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-x1 transition duration-200" onClick={listadopacientes}>Cancelar</button>

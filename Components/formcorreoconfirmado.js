@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Input from "./Input";
-
+import {URL} from "../constantes"
 
 
 export default function Formcorreoconfirmado() {
@@ -34,7 +34,8 @@ export default function Formcorreoconfirmado() {
         if (contraseña == confcontraseña) {
 
             console.log("Entro al fetch");
-            fetch("http://[::1]:3001/changePass/" + token, {
+            console.log(token)
+            fetch(URL+"/changePass/" + token, {
                 method: "POST",
                 body: JSON.stringify({ 
                     password: confcontraseña
@@ -66,7 +67,7 @@ export default function Formcorreoconfirmado() {
            
         <main className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
-            <h3 className="font-bold text-2xl">CAMBIAR CONTRASEÑA</h3>
+            <h3 className="font-bold text-gray-600 pt-2 text-2xl">CAMBIAR CONTRASEÑA</h3>
             <p className="text-gray-600 pt-2">Por favor introduce tu nueva contraseña</p>
         </section>
 
@@ -77,7 +78,7 @@ export default function Formcorreoconfirmado() {
                     <Input  typeinput="password" onChange={pass}/>
                 </div>
                 <div className="mb-6 pt-3 rounded bg-gray-200">
-                    <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Confrimar Contraseña:</label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Confirmar Contraseña:</label>
                     <Input  typeinput="password" onChange={confpass} />
                 </div>
                 <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" onClick={CambiarContra}>Confirmar Contraseña</button>

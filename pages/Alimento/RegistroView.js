@@ -1,5 +1,5 @@
 import RegistrarAlimento from '../../Components/Alimento/Registro'
-import Layout from '../../Components/layout'
+import Layout from '../../Components/layoutinicio'
 
 export default function RegistroView() {
     return (<Layout>

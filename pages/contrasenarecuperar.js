@@ -6,6 +6,6 @@ import Formcontrasena from '../Components/Formcontrasena'
 
 export default function Home() {
     return (
-     <Layout><Formcontrasena/></Layout>
+     <><Formcontrasena/></>
     )
   }

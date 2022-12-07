@@ -40,7 +40,7 @@ export default function Formcontrasena() {
            
         <main className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
             <section>
-                <h3 className="font-bold text-2xl">RECUPERAR CONTRASEÑA</h3>
+                <h3 className="font-bold text-gray-600 text-2xl">RECUPERAR CONTRASEÑA</h3>
                 <p className="text-gray-600 pt-2">Por favor introduce tu cuenta de correo electronico</p>
             </section>
 

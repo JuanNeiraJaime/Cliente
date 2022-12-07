@@ -1,5 +1,5 @@
 import React, {Fragment, useState, useEffect} from "react";
-import Navbar from '../../Components/NavbarNutri'
+import Layout from "../../Components/layoutinicio"
 import ListadoCitas from "../../Components/Cita/Listado";
 
 export default function ListadoCita() {
@@ -19,8 +19,8 @@ export default function ListadoCita() {
     }, [listUpdated]);
 
     return (
-        <Fragment>
-            <Navbar brand='Nutridiet App'/>
+        <Layout>
+            {/* <Navbar brand='Nutridiet App'/> */}
             <div className="container">
                 <div className="row">
                     <div className="">
@@ -33,6 +33,6 @@ export default function ListadoCita() {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </Layout>
     )
   }

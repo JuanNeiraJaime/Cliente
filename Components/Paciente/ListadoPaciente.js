@@ -11,7 +11,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import { useRouter } from "next/router";
-
+import {URL} from "../../constantes"
 
 function ListadoPaciente({ pacientes, setListUpdated }) {
 
@@ -103,10 +103,9 @@ function ListadoPaciente({ pacientes, setListUpdated }) {
                   <Button size="sm"  onClick={() => editar(paciente)} color="primary">Editar</Button>
                   <Button size="sm" onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
                   <Button size="sm" onClick={() => Prog(paciente.id_pac)} color="primary">Progresos</Button>
-=======
-                  <Button onClick={() => editar(paciente)} color="primary">Editar</Button>
-                  <Button onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button>
-                  <Button onClick={() => handleCita(paciente)} color="danger">Agendar Cita</Button>
+                  {/* <Button onClick={() => editar(paciente)} color="primary">Editar</Button>
+                  <Button onClick={() => handleDelete(paciente.id_pac)} color="danger">Eliminar</Button> */}
+                  <Button size="sm" onClick={() => handleCita(paciente)} color="danger">Agendar Cita</Button>
                 </td>
             </tr>
           ))}

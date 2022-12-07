@@ -1,7 +1,6 @@
 import React, {Fragment, useState, useEffect} from "react";
-import Navbar from '../../../Components/NavbarNutri'
 import ListadoProgresos from "../../../Components/Paciente/ListadoProgresos";
-import layout from "../../../Components/layoutinicio"
+import Layout from "../../../Components/layoutinicio"
 import { URL } from "../../../constantes";
 import { useRouter } from "next/router";
 import { Nav } from "reactstrap";
@@ -27,7 +26,7 @@ export default function ListadoProg() {
      }, [listUpdated]);
 
      return (
-         <layout>
+         <Layout>
              {/* <Navbar brand='Nutridiet App'/> */}
              <div className="container">
                  <div className="row">
@@ -41,7 +40,7 @@ export default function ListadoProg() {
                      </div>
                  </div>
              </div>
-         </layout>
+         </Layout>
      )
 
   }

@@ -31,9 +31,9 @@ export default function Navbar() {
           <div className="flex space-x-4">
             <Link href="/Pacientes/Listado" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Pacientes</Link>
 
-            <Link href="/Pacientes/registro" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dieta</Link>
+            <Link href="/Alimento/ListadoView" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Comidas</Link>
 
-            <Link href="" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Citas</Link>
+            <Link href="/Citas/listadocita" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Citas</Link>
           </div>
         </div>
       </div>
@@ -45,9 +45,9 @@ export default function Navbar() {
       <Link href="/Pacientes/Listado" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Pacientes</Link>
 
 
-      <Link href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dieta</Link>
+      <Link href="/Alimento/ListadoView" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Comidas</Link>
 
-      <Link href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Citas</Link>
+      <Link href="/Citas/listadocita" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Citas</Link>
     </div>
   </div>
 </nav>

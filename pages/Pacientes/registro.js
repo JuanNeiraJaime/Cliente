@@ -1,7 +1,7 @@
 //import Layoutinicio from '../../Components/layoutinicio'
 import Registrarpaciente from '../../Components/Paciente/Registro'
 //import styles from '../../styles/Home.module.css'
-import Layout from '../../Components/Layout'
+import Layout from '../../Components/layoutinicio'
 
 export default function Registro() {
     return (<Layout>

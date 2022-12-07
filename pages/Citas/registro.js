@@ -1,6 +1,6 @@
 
 import RegistraCita from '../../Components/Cita/Registro'
-import Layout from '../../Components/Layout'
+import Layout from '../../Components/layoutinicio'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import DateFnsUtils from '@date-io/date-fns'
 import esLocale from 'date-fns/locale/es'

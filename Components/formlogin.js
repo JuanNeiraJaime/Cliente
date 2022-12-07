@@ -44,7 +44,7 @@ export default function Formlogin() {
                     icon: "Succes",
                     button: "Aceptar"
                }); */
-                window.location.replace("/home")
+                window.location.replace("/Citas/listadocita")
                } 
                else if (422) 
                {
@@ -74,7 +74,7 @@ export default function Formlogin() {
            
         <main className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
-            <h3 className="font-bold text-2xl">Bienvenido a Nutridiet</h3>
+            <center><h3 className="font-bold text-2xl text-gray-600 pt-2">Bienvenido a Nutridiet</h3></center>
             <p className="text-gray-600 pt-2">Inicie Sesion en su cuenta.</p>
         </section>
 

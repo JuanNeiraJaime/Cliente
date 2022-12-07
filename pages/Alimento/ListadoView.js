@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useEffect} from "react";
 import Navbar from '../../Components/NavbarNutri'
+import Layout from "../../Components/layoutinicio"
 import ListadoAlimento from "../../Components/Alimento/Listado";
 import { URL } from "../../constantes";
 
@@ -21,8 +22,7 @@ export default function ListadoView() {
     }, [listUpdated]);
 
     return (
-        <Fragment>
-            <Navbar brand='Nutridiet App'/>
+        <Layout>
             <div className="container">
                 <div className="row">
                     <div className="">
@@ -35,6 +35,6 @@ export default function ListadoView() {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </Layout>
     )
   }

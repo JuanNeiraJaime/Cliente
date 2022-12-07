@@ -1,5 +1,4 @@
 import React, {Fragment, useState, useEffect} from "react";
-import Navbar from '../../Components/Navbar'
 import ListadoPaciente from "../../Components/Paciente/ListadoPaciente";
 import Layout from "../../Components/layoutinicio";
 import { URL } from "../../constantes";

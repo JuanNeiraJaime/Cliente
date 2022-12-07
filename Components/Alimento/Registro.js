@@ -135,17 +135,17 @@ export default function Registro({ ID = "", NOMBRE = "", TIPO = ""}) {
 		}
 	}
 	return <div>
-		<form className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl" >
+		<form className="bg-white max-w-lg mx-auto text-gray-600 p-8 md:p-12 my-10 rounded-lg shadow-2xl" >
 			<section>
 				<h3 className="font-bold text-2xl">Registro de Alimentos</h3>
 				<p className="text-gray-600 pt-2">Ingrese los datos correctamente</p>
 			</section>
 			<section className="mt-6">
-				<div><label htmlFor="ID">ID Alimento:</label></div>
-				<Input typeinput="text" value={Id} name="ID" onChange={onChangeId} />
-				<div><label htmlFor="Nombres">Nombre:</label></div>
+				{/* <div><label className="text-gray-600 pt-2" htmlFor="ID">ID Alimento:</label></div> */}
+				<input typeinput="text" value={Id} name="ID" onChange={onChangeId} hidden />
+				<div><label className="text-gray-600 pt-2" htmlFor="Nombres">Nombre:</label></div>
 				<Input typeinput="text" value={Nombre} name="Nombre" onChange={onChangeNom} />
-				<div><label htmlFor="Tipo">Tipo:</label></div>
+				<div><label className="text-gray-600 pt-2" htmlFor="Tipo">Tipo:</label></div>
 				<Input typeinput="text" value={Tipo} name="Tipo" onChange={onChangeTipo} />
 			</section>
 			<button className="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" onClick={RegistrarAlimento}>Registrar Alimento</button>
